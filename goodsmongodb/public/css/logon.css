@@ -1,0 +1,22 @@
+.logon-interface {
+    position: absolute;
+    top: calc(50% - 162.4px);
+    left: calc(50% - 225px);
+    padding: 20px;
+    background-color: white;
+    width: 450px;
+}
+
+.logon-interface>h2 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.form-control {
+    padding: 8px 14px !important;
+}
+
+.form-group {
+    margin-bottom: 30px !important;
+}

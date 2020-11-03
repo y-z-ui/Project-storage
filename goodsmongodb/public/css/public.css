@@ -1,0 +1,81 @@
+@import "./bootstrap.css";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+ul,
+li {
+    list-style-type: none !important;
+}
+
+/* 背景颜色 */
+.bg-blue {
+    background-color: #00B4EF !important;
+}
+
+.bg-gray {
+    background-color: #eee !important;
+}
+
+.bg-black-g {
+    background-color: #080807bb !important;
+}
+
+.bg-black {
+    background-color: #000 !important;
+}
+
+/* 字体样式 */
+.font-black {
+    color: #333 !important;
+}
+
+.font-write {
+    color: #eff !important;
+}
+
+/* 边框设置 */
+.bd-radius {
+    border-radius: 10px !important;
+}
+
+.bd-radius-5 {
+    border-radius: 25px !important;
+}
+
+/* 欢迎删除 */
+.exit {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 0;
+}
+
+@media (max-width:768px) {
+    .exit {
+        position: absolute;
+        top: 0;
+        right: 15%;
+    }
+}
+
+/* 导航100%宽 */
+.navwidth {
+    padding: 0 !important;
+}
+
+/* logo大小 */
+.logo {
+    font-size: 30px;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/addgoods.css">
+    <title>增加商品</title>
+</head>
+
+<body>
+    <%- include("./component/head.ejs")%>
+    <div class="container-fluid">
+        <div class="col-sm-2 col-xs-12">
+            <div class="panel panel-primary">
+                <%- include("./component/aside.ejs")%>
+            </div>
+        </div>
+
+        <div class="col-sm-10 col-xs-12">
+            <ol class="breadcrumb">
+                <li><a href="#">商品管理</a></li>
+                <li><a href="#">商品列表</a></li>
+            </ol>
+            <div class="panel panel-default">
+                <div class="panel-heading">增加商品</div>
+
+                <form class="form-horizontal" action="/admin/updategoods?_id=<%=lists._id%>" method="POST"
+                    enctype="multipart/form-data">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group">
+                            <label for="" class="col-xs-2 control-label">商品名称</label>
+                            <div class="col-xs-6">
+                                <input type="text" name="gname" value="<%=lists.gname%>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-2 control-label">商品图片</label>
+                            <label for="gimgs" class="col-xs-3">
+                                <div style="width: 88px;border: 1px solid gray;">
+                                    <img id="gimgss" width="100%" src="<%=lists.gimg%>">
+                                </div>
+                                <input type="file" style="display:none" name="gimgs" id="gimgs">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-xs-2 control-label">商品价格</label>
+                            <div class="col-xs-6">
+                                <input type="text" name="gprice" value="<%=lists.gprice%>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-xs-2 control-label">商品邮费</label>
+                            <div class="col-xs-6">
+                                <input type="text" name="gpostage" value="<%=lists.gpostage%>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-xs-2 control-label">商品描述</label>
+                            <div class="col-xs-10">
+                                <textarea name="gdescribe" id="editor" class="form-control"
+                                    rows="5"><%=lists.gdescribe%></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12 col-xs-12">
+                                <input type="submit" class="form-control" value="修改">
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-3.5.1.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/ckeditor.js"></script>
+    <script>
+        let ckeditor
+        ClassicEditor.create(document.querySelector('#editor')).then((res) => {
+            console.log(res);
+        });
+        $("#gimgs").on("change", function () {
+            let reader = new FileReader();
+            reader.readAsDataURL(this.files[0])
+            reader.onload = function () {
+                $("#gimgss").attr("src", reader.result)
+            }
+        })
+    </script>
+</body>
+
+</html>
