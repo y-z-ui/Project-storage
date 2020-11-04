@@ -36,14 +36,14 @@
 
                     <!-- 第二套方案----------------form-->
                     <form action="/admin/goodssearch" class="form-horizontal">
-                        <div class="form-group col-md-6 col-sm-12">
-                            <label for="search" class="col-xs-2 control-label">名称</label>
-                            <div class="col-xs-6">
-                                <input name="searchTo" id="search" type="text" class="form-control">
-                            </div>
-                            <div class="col-xs-4">
-                                <input type="submit" class="form-control" value="开始搜索">
-                            </div>
+                        <div class="form-group col-sm-12">
+                            <label for="search">名称</label>
+                            <input name="searchTo" id="search" type="text">
+                            <label for="">价格:</label>
+                            <input type="text" class="jgnmb" name="minpic">
+                            <label for="">~</label>
+                            <input type="text" class="jgnmb" name="maxpic">
+                            <input type="submit" value="开始搜索">
                         </div>
                     </form>
 
