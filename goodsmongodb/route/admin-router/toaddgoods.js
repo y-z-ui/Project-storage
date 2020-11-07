@@ -14,7 +14,9 @@ module.exports = (req, res) => {
             gimg: files.gimgs.path.split("public")[1],
             gprice: fields.gprice,
             gpostage: fields.gpostage,
-            gdescribe: fields.gdescribe
+            gdescribe: fields.gdescribe,
+            msort: fields.msort,
+            ssort: fields.ssort
         })
         if (result) {
             res.redirect("/admin/goodslist");

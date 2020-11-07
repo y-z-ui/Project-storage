@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <title>首页</title>
+</head>
+
+<body>
+    <%- include("./component/head.ejs")%>
+    <div class="container-fluid">
+        <div class="col-sm-2 col-xs-12">
+            <div class="panel panel-primary">
+                <%- include("./component/aside.ejs")%>
+            </div>
+        </div>
+
+        <div class="col-xs-10">
+            <ol class="breadcrumb">
+                <li><a href="#">商品管理</a></li>
+                <li><a href="#">商品列表</a></li>
+            </ol>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    搜索
+                </div>
+                <div class="panel-body">
+                    <!-- 第一套方案----------------无form-->
+
+                    <!-- <label for="search">名称:</label>
+                    <input name="searchTo" id="search" type="text">
+                    <button type="button" id="searchGo">开始搜索</button> -->
+
+                    <!-- 第二套方案----------------form-->
+                    <form action="/admin/goodssearch" class="form-horizontal">
+                        <div class="form-group col-sm-12">
+                            <a href="/admin/goodssearch?msort=母分类1" class="btn btn-default">母分类1</a>
+                            <a href="/admin/goodssearch?msort=母分类2" class="btn btn-default">母分类2</a>
+                            <a href="/admin/goodssearch?msort=母分类3" class="btn btn-default">母分类3</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include("./component/modal.ejs")%>
+    <script src="../js/jquery-3.5.1.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script>
+        $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').focus()
+        })
+        $("#del").on("click", function () {
+            let delid = $(this).attr("data-id");
+            console.log($("#delete").attr("href", "/admin/delete?_id=" + delid));
+        })
+    </script>
+</body>
+
+</html>

@@ -35,7 +35,7 @@
                     <button type="button" id="searchGo">开始搜索</button> -->
 
                     <!-- 第二套方案----------------form-->
-                    <form action="/admin/goodssearch" class="form-horizontal">
+                    <form action="/admin/goodssearch?msort=<%=msort%>" class="form-horizontal">
                         <div class="form-group col-sm-12">
                             <label for="search">名称</label>
                             <input name="searchTo" id="search" type="text" value="<%=searchTo%>">
@@ -83,27 +83,27 @@
                 <ul class="pagination">
                     <li class="disabled"><a href="">共有<%=total%>条</a></li>
                     <li><a
-                            href="/admin/goodssearch?searchTo=<%=searchTo%>&minpic=<%=minpic%>&maxpic=<%=maxpic%>&page=1&size=3">首页</a>
+                            href="/admin/goodssearch?searchTo=<%=searchTo%>&minpic=<%=minpic%>&maxpic=<%=maxpic%>&page=1&size=3&msort=<%=msort%>">首页</a>
                     </li>
                     <li class="<%= page<=1?'disabled':''%>">
-                        <a href="/admin/goodssearch?searchTo=<%=searchTo%>&minpic=<%=minpic%>&maxpic=<%=maxpic%>&page=<%=page<=1?1:page-1%>&size=3"
+                        <a href="/admin/goodssearch?searchTo=<%=searchTo%>&minpic=<%=minpic%>&maxpic=<%=maxpic%>&page=<%=page<=1?1:page-1%>&size=3&msort=<%=msort%>"
                             aria-label="Previous">
                             <span aria-hidden="true">上一页</span>
                         </a>
                     </li>
                     <% for(var i = 1;i <= totalpage;i++){%>
                     <li class="<%= page == i ? 'active':''%>"><a
-                            href="/admin/goodssearch?searchTo=<%=searchTo%>&minpic=<%=minpic%>&maxpic=<%=maxpic%>&page=<%= i %>&size=3"><%=i%></a>
+                            href="/admin/goodssearch?searchTo=<%=searchTo%>&minpic=<%=minpic%>&maxpic=<%=maxpic%>&page=<%= i %>&size=3&msort=<%=msort%>"><%=i%></a>
                     </li>
                     <% } %>
                     <li class="<%=page>=totalpage?'disabled':''%>">
-                        <a href="/admin/goodssearch?searchTo=<%=searchTo%>&minpic=<%=minpic%>&maxpic=<%=maxpic%>&page=<%=page>=totalpage?totalpage:page+1%>&size=3"
+                        <a href="/admin/goodssearch?searchTo=<%=searchTo%>&minpic=<%=minpic%>&maxpic=<%=maxpic%>&page=<%=page>=totalpage?totalpage:page+1%>&size=3&msort=<%=msort%>"
                             aria-label="Next">
                             <span aria-hidden="true">下一页</span>
                         </a>
                     </li>
                     <li><a
-                            href="/admin/goodssearch?searchTo=<%=searchTo%>&minpic=<%=minpic%>&maxpic=<%=maxpic%>&page=<%=totalpage%>&size=3">尾页</a>
+                            href="/admin/goodssearch?searchTo=<%=searchTo%>&minpic=<%=minpic%>&maxpic=<%=maxpic%>&page=<%=totalpage%>&size=3&msort=<%=msort%>">尾页</a>
                     </li>
                     <li class="disabled"><a href="">共有<%=totalpage%>页</a></li>
                 </ul>

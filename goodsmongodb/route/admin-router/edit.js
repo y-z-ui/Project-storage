@@ -5,10 +5,12 @@ module.exports = async (req, res) => {
     let reqquery2 = await userdb.find(req.query);
 
     if (Boolean(reqquery1[0])) {
+        console.log(reqquery1);
         res.render("./admin/editgoods", {
             lists: reqquery1[0]
         })
     } else if (Boolean(reqquery2[0])) {
+        console.log(reqquery2);
         res.render("./admin/edituser", {
             lists: reqquery2[0]
         })

@@ -15,7 +15,9 @@ const goodsSchema = new mongoose.Schema({
     gpostage: {
         type: [Number, "邮费只能为数值"]
     },
-    gdescribe: String
+    gdescribe: String,
+    msort: String,
+    ssort:String
 });
 
 const GoodsDB = mongoose.model("Goods", goodsSchema);

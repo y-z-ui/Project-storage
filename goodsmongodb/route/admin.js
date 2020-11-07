@@ -22,6 +22,7 @@ router.post("/updateuser", require("./admin-router/updateuser"));
 // 搜索列表
 router.get("/usersearch", require("./admin-router/usersearch"))
 router.get("/goodssearch", require("./admin-router/goodssearch"))
+router.get("/goodssort", require("./admin-router/goodssort"))
 //安全退出
 router.get("/signout", require("./admin-router/signout"));
 module.exports = router;
